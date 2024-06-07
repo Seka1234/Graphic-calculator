@@ -1,0 +1,137 @@
+body {
+    background-color: #fdd6a6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+nav {
+    text-align: center;
+    }
+    .b1, .b2, .b3, .b4, .b5 {
+    color: #ff7718;
+    margin-left: 55px;
+    font-size: 28px;
+    font-weight: bold;
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    margin-bottom: 100px;
+    }
+.circle_img {
+    display: flex;
+    justify-content: center;
+}
+.square_img {
+    display: flex;
+    justify-content: center;
+}
+.rectangle_img {
+    display: flex;
+    justify-content: center;
+}
+.triangle_img {
+    display: flex;
+    justify-content: center;
+}
+.error {
+    color: #F25757;
+    font-weight: bold;
+}
+.correct {
+    color:black;
+    font-weight: normal;
+}
+
+
+.circle-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;  /* Ширина кнопки */
+    height: 200px;  /* Висота кнопки */
+    border-radius: 50%;  /* Робимо кнопку круглою */
+    background-color: #F28749;  /* Колір фону */
+    color: white;  /* Колір тексту */
+    border: none;  /* Без рамки */
+    text-align: center;  /* Вирівнювання тексту по центру */
+    line-height: 100px;  /* Вирівнювання тексту по вертикалі */
+    font-size: 20px;  /* Розмір шрифту */
+    cursor: pointer;  /* Зміна курсору при наведенні */
+    transition: background-color 0.3s;  /* Анімація зміни кольору фону */
+}
+.circle-button:hover {
+    background-color: #BF3617;  /* Колір фону при наведенні */
+}
+.rectangle-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;  /* Ширина кнопки */
+    height: 200px;  /* Висота кнопки */
+    background-color: #F28749;  /* Колір фону */
+    color: white;  /* Колір тексту */
+    border: none;  /* Без рамки */
+    text-align: center;  /* Вирівнювання тексту по центру */
+    line-height: 100px;  /* Вирівнювання тексту по вертикалі */
+    font-size: 20px;  /* Розмір шрифту */
+    cursor: pointer;  /* Зміна курсору при наведенні */
+    transition: background-color 0.3s;  /* Анімація зміни кольору фону */
+}
+.rectangle-button:hover {
+    background-color: #BF3617;  /* Колір фону при наведенні */
+}
+.square-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;  /* Ширина кнопки */
+    height: 200px;  /* Висота кнопки */
+    background-color: #F28749;  /* Колір фону */
+    color: white;  /* Колір тексту */
+    border: none;  /* Без рамки */
+    text-align: center;  /* Вирівнювання тексту по центру */
+    line-height: 100px;  /* Вирівнювання тексту по вертикалі */
+    font-size: 20px;  /* Розмір шрифту */
+    cursor: pointer;  /* Зміна курсору при наведенні */
+    transition: background-color 0.3s;  /* Анімація зміни кольору фону */
+}
+.square-button:hover {
+    background-color: #BF3617;  /* Колір фону при наведенні */
+}
+
+
+
+
+.triangle-button {
+                position: relative;
+                width: 200px;
+                height: 200px;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                outline: none;
+            }
+
+            .triangle-button:before {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                border-left: 100px solid transparent;
+                border-right: 100px solid transparent;
+                border-bottom: 200px solid #F28749;
+            }
+
+            .triangle-button:hover:before {
+                border-bottom-color: #BF3617;
+            }
+
+            .triangle-button span {
+                position: relative;
+                color: white; /* Змінено на білий колір тексту */
+                font-size: 16px;
+                z-index: 1;
+            }

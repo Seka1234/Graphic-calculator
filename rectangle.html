@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Геометричний калькулятор</title>
+        <link rel="stylesheet" href="general.css">
+    </head>
+    
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <button onclick="window.location.href='main.html';" class="b1">Головна</button>
+                    <button onclick="window.location.href='circle.html';" class="b2">Круг</button>
+                    <button onclick="window.location.href='rectangle.html';" class="b3">Прямокутник</button>
+                    <button onclick="window.location.href='square.html';" class="b4">Квадрат</button>
+                    <button onclick="window.location.href='triangle.html';" class="b5">Трикутник</button>
+                </ul>
+            </nav>
+        </header>
+
+
+        <div class="rectangle_img">
+            <img src="img/rectangle.png" style="width: 450px; margin-bottom: 0px;">
+        </div>
+        <i><h2 style="text-align: center; margin-top: 0px; font-size: 34px; color: #1B9688;">Прямокутник</h2></i>
+
+
+        <section style="background-color: #ffbb76; width: 25%; padding: 15px; margin: 0 auto; font-size: 20px; margin-bottom: 100px;">
+
+        <i><h4 style="text-align: center;">Визначити загальні характеристики прямокутника:</h4></i>
+        
+        <div class="form" style="display: flex; justify-content: center;">
+            <form name="user_form" onsubmit="calculateArea(event)">
+                <label for="a">Введіть довжину прямокутника в сантиметрах:</label>
+                    <br>
+                    <br>
+                <input type="text" name="a" placeholder="Довжина" id="a" required size="35px" style="font-size: 18px;">
+                    <br>
+                    <br>
+                <label for="b">Введіть ширину прямокутника в сантиметрах:</label>
+                    <br>
+                    <br>
+                <input type="text" name="b" placeholder="Ширина" id="b" required size="35px" style="font-size: 18px;">
+                    <br>
+                    <br>
+                <input type="submit" name="submit" value="Розрахувати" id="submit" style="font-size: 18px;">
+            </form>
+        </div>
+        <br>
+            <div class="result1" id="result1" style="margin-bottom: 8px;"></div>
+            <div class="result2" id="result2" style="margin-bottom: 8px;"></div>
+            <div class="result3" id="result3" style="margin-bottom: 8px;"></div>
+            <div class="result4" id="result4" style="margin-bottom: 8px;"></div>
+            <div class="result5" id="result5" style="margin-bottom: 8px;"></div>
+        </section>
+
+        <script>
+            function calculateArea(event) {
+                event.preventDefault(); // Запобігає перезавантаженню сторінки при надсиланні форми
+                const a = parseFloat(document.getElementById('a').value);
+                const b = parseFloat(document.getElementById('b').value);
+
+                if (a && !isNaN(a) && a > 0) {
+                    if (b && !isNaN(b) && b > 0) {
+                        document.getElementById('result1').classList.add('correct');
+                        
+                        const area = a * b;
+                        document.getElementById('result1').innerText = `Площа прямокутника: ${area.toFixed(2)} см²`;
+
+                        const perimeter = 2 * (a + b);
+                        document.getElementById('result2').innerText = `Периметр прямокутника: ${perimeter} см`;
+
+                        const diagonal = Math.sqrt((Math.pow(a, 2) + Math.pow(b, 2)));
+                        document.getElementById('result3').innerText = `Діагональ прямокутника: ${diagonal.toFixed(2)} см`
+
+                        const alfa = Math.atan(b / a) * (180 / Math.PI);
+                        document.getElementById('result4').innerText = `Кут між діагоналями Alfa: ${alfa.toFixed(2)} градусів`
+
+                        const beta = Math.atan(a / b) * (180 / Math.PI);
+                        document.getElementById('result5').innerText = `Кут між діагоналями Beta: ${beta.toFixed(2)} градусів`
+                    } else {
+                        document.getElementById('result1').innerText = 'Будь ласка, введіть правильні довжини сторін прямокутника!';
+                        document.getElementById('result1').classList.add('error');
+                        document.getElementById('result2').innerText = '';
+                        document.getElementById('result3').innerText = '';
+                    }
+
+                } else {
+                        document.getElementById('result1').innerText = 'Будь ласка, введіть правильні довжини сторін прямокутника!';
+                        document.getElementById('result1').classList.add('error');
+                        document.getElementById('result2').innerText = '';
+                        document.getElementById('result3').innerText = '';
+                   }
+
+            }
+
+        </script>
+
+    </body>
+</html>
